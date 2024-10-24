@@ -6,33 +6,50 @@ public class House extends Building{
   private ArrayList<String> residents; // The <String> tells Java what kind of data we plan to store IN the ArrayList
   private boolean hasDiningRoom;
 
- 
-  public House(boolean hasDiningRoom) {
+  /**
+   * House constructor
+   * @param name
+   * @param address
+   * @param nFloors
+   * @param hasDiningRoom
+   */
+  public House(String name, String address, int nFloors,boolean hasDiningRoom) {
     this.residents = new ArrayList<String>();
-    super("Home", "10 Meadowview Road",2);
-    residents = new ArrayList<String>();
-    hasDiningRoom = true;
+    super(name, address,nFloors);
+    this.hasDiningRoom = hasDiningRoom;
     System.out.println("You have built a house: 🏠");
   }
+  /**
+   * Accessor to check if the house has dining room
+   * @return hasDiningRoom
+   */
   public boolean hasDiningRoom(){
     return hasDiningRoom;
   }
+  /**
+   * Accessor for number of residents of house
+   * @return number of residents
+   */
   public int nResidents(){
     return residents.size();
   }
   public void moveIn(String name){
-     residents.add(name);
+    if(residents.contains(name)){
+      throw new RuntimeException("Can't add that person");
+    }else{
+      residents.add(name);
+    }
   }
 
   public void moveOut(String name){
     if(residents.contains(name)){
       residents.remove(name);
     }else{
-      System.err.println("Can't remove that person");
+      throw new RuntimeException("Can't remove that person");
     }
   }
   public static void main(String[] args) {
-    new House(true);
+    new House("Home", "10 Meadowview Road Basking Ridge, NJ", 2,true);
   }
 
 }
