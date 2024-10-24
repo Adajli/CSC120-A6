@@ -35,6 +35,7 @@ public class Cafe extends Building{
      */
     public void sellCoffee(int size, int nSugarPackets, int nCreams){    
         if(this.nSugarPackets <nSugarPackets || this.nCreams<nCreams|| this.nSugarPackets<nSugarPackets || nCoffeeOunces<size){
+            System.out.println("Not enough ingredients.");
             restock(nCoffeeOunces,nSugarPackets,nCreams,this.nCups);
         }else{
             nCoffeeOunces -=size;
@@ -60,6 +61,8 @@ public class Cafe extends Building{
     public static void main(String[] args) {
        Cafe brewHaven = new Cafe("Brew Haven", "10 Meadwoview Road, Basking Ridge, New Jersey", 2,100,100,20,50);
        brewHaven.sellCoffee(12,2,3);
+       brewHaven.sellCoffee(30,2,3);
+       brewHaven.sellCoffee(40,2,3);
     }
     
 }
