@@ -1,7 +1,11 @@
-/* This is a stub for the House class */
+/* This is the full House class */
 
 import java.util.ArrayList;
-
+/** 
+ * This is the house clas
+ * @author Ada Li
+ * @since October 24, 2024
+*/
 public class House extends Building{
   //House attributes
   private ArrayList<String> residents; // The <String> tells Java what kind of data we plan to store IN the ArrayList
