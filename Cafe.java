@@ -30,7 +30,7 @@ public class Cafe extends Building{
      * @param nCreams
      */
     public void sellCoffee(int size, int nSugarPackets, int nCreams){    
-        if(nSugarPackets == 0 || nCreams==0 || nSugarPackets ==0){
+        if(this.nSugarPackets <nSugarPackets || this.nCreams<nCreams|| this.nSugarPackets<nSugarPackets || nCoffeeOunces<size){
             restock(nCoffeeOunces,nSugarPackets,nCreams,this.nCups);
         }else{
             nCoffeeOunces -=size;
@@ -39,6 +39,13 @@ public class Cafe extends Building{
             this.nCups -=1;
         }
     }
+    /**
+     * Restock function to restock ingredients
+     * @param nCoffeeOunces
+     * @param nSugarPackets
+     * @param nCreams
+     * @param nCups
+     */
     private void restock(int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups){
         this.nCoffeeOunces += nCoffeeOunces;
         this.nSugarPackets += nSugarPackets;
@@ -47,7 +54,8 @@ public class Cafe extends Building{
     } 
 
     public static void main(String[] args) {
-       Cafe brewHaven = new Cafe("Brew Haven", "10 Meadwoview Road, Basking Ridge, New Jersey", 2,30,40,20,10);
+       Cafe brewHaven = new Cafe("Brew Haven", "10 Meadwoview Road, Basking Ridge, New Jersey", 2,100,100,20,50);
+       brewHaven.sellCoffee(12,2,3);
     }
     
 }
