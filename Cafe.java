@@ -1,4 +1,9 @@
 /* This is a stub for the Cafe class */
+/** 
+ * Cafe clas
+ * @author Ada Li
+ * @since October 24, 2024
+*/
 public class Cafe extends Building{
     //Attributes
     private int nCoffeeOunces; // The number of ounces of coffee remaining in inventory
