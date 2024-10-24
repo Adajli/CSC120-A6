@@ -1,4 +1,3 @@
-/* This is a stub for the Library class */
 
 import java.util.ArrayList;
 import java.util.Hashtable;
