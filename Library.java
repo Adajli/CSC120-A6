@@ -60,10 +60,44 @@ public class Library extends Building{
     public void returnBook(String title){
       addTitle(title);
     }
+    /**
+     * Function to check of the title is in the library
+     * @param title
+     * @return
+     */
+    public boolean containsTitle(String title){
+      boolean containsTitle = false;
+      if(collection.contains(title)){
+        containsTitle= true;
+      }
+      return containsTitle;
+    } 
+    /**
+     * Function checks if the title is available
+     * @param title
+     * @return boolean variable availalbe
+     */
+    public boolean isAvailable(String title){
+      boolean available = false;
+      if(collection.contains(title)){
+        available= true;
+      }
+      return available;
+    }
+    // returns true if the title is currently available, false otherwise
+    /** 
+     * Function prints out collection
+    */
+    public void printCollection(){
+      System.out.println(collection);
+    } // prints out the entire collection in an easy-to-read way (including checkout status)
     /*Main function for testing */
     public static void main(String[] args) {
       Library neilsonLibrary =new Library("Neilson Library" ,"7 Neilson Drive, Northampton, MA 01063",4);
       neilsonLibrary.addTitle("The Art of War");
-    }
+      neilsonLibrary.addTitle("Astronomy");
+      neilsonLibrary.checkOut("Astronomy");
+      neilsonLibrary.printCollection();
+     }
   
   }
