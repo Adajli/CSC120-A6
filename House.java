@@ -33,6 +33,10 @@ public class House extends Building{
   public int nResidents(){
     return residents.size();
   }
+  /**
+   * Move in function
+   * @param name
+   */
   public void moveIn(String name){
     if(residents.contains(name)){
       throw new RuntimeException("Can't add that person");
@@ -40,7 +44,10 @@ public class House extends Building{
       residents.add(name);
     }
   }
-
+  /**
+   * Move out function
+   * @param name
+   */
   public void moveOut(String name){
     if(residents.contains(name)){
       residents.remove(name);
