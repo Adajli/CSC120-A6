@@ -56,7 +56,9 @@ public class House extends Building{
     }
   }
   public static void main(String[] args) {
-    new House("Home", "10 Meadowview Road Basking Ridge, NJ", 2,true);
+    House myHome = new House("Home", "10 Meadowview Road Basking Ridge, NJ", 2,true);
+    myHome.moveIn("Ada Li");
+    myHome.nResidents(); 
   }
 
 }
