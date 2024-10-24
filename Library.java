@@ -52,6 +52,9 @@ public class Library extends Building{
      */
     public void checkOut(String title){
       removeTitle(title);
+      if(!collection.contains(title)){
+        System.out.println(title + "is checked out.");
+      }
     }
     /**
      * Function to return title
@@ -59,6 +62,9 @@ public class Library extends Building{
      */
     public void returnBook(String title){
       addTitle(title);
+      if(!collection.contains(title)){
+        System.out.println(title + "is returned.");
+      }
     }
     /**
      * Function to check if the title is in the library
@@ -81,6 +87,8 @@ public class Library extends Building{
       boolean available = false;
       if(collection.contains(title)){
         available= true;
+      }else{
+        System.out.println("This title is not available");
       }
       return available;
     }
