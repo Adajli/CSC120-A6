@@ -57,7 +57,7 @@ public class House extends Building{
     }
   }
   /**
-   * Function to check if the person isResident
+   * Function to check if the person is the resident of house
    * @param person
    * @return isResident
    */
@@ -69,7 +69,7 @@ public class House extends Building{
     return isResident;
   }  
   public static void main(String[] args) {
-    House myHome = new House("Home", "10 Meadowview Road Basking Ridge, NJ", 2,true);
+    House myHome = new House("My Home", "10 Meadowview Road Basking Ridge, NJ", 2,true);
     myHome.moveIn("Ada Li");
     myHome.moveIn("Hong Li");
     myHome.moveIn("Jin Chen");
