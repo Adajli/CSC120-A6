@@ -61,9 +61,9 @@ public class Library extends Building{
       addTitle(title);
     }
     /**
-     * Function to check of the title is in the library
+     * Function to check if the title is in the library
      * @param title
-     * @return
+     * @return boolean containsFile
      */
     public boolean containsTitle(String title){
       boolean containsTitle = false;
@@ -89,13 +89,14 @@ public class Library extends Building{
      * Function prints out collection
     */
     public void printCollection(){
-      System.out.println(collection);
+      System.out.println(collection.toString());
     } // prints out the entire collection in an easy-to-read way (including checkout status)
     /*Main function for testing */
     public static void main(String[] args) {
       Library neilsonLibrary =new Library("Neilson Library" ,"7 Neilson Drive, Northampton, MA 01063",4);
       neilsonLibrary.addTitle("The Art of War");
       neilsonLibrary.addTitle("Astronomy");
+      neilsonLibrary.isAvailable("Astronomy");
       neilsonLibrary.checkOut("Astronomy");
       neilsonLibrary.printCollection();
      }
