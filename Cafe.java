@@ -1,4 +1,3 @@
-/* This is a stub for the Cafe class */
 /** 
  * Cafe clas
  * @author Ada Li
