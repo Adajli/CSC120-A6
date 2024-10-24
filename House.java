@@ -3,6 +3,7 @@
 import java.util.ArrayList;
 
 public class House extends Building{
+  //House attributes
   private ArrayList<String> residents; // The <String> tells Java what kind of data we plan to store IN the ArrayList
   private boolean hasDiningRoom;
 
@@ -55,10 +56,25 @@ public class House extends Building{
       throw new RuntimeException("Can't remove that person");
     }
   }
+  /**
+   * Function to check if the person isResident
+   * @param person
+   * @return isResident
+   */
+  public boolean isResident(String person){
+    boolean isResident = false;
+    if(residents.contains(person)){
+      isResident = true;
+    }
+    return isResident;
+  }  
   public static void main(String[] args) {
     House myHome = new House("Home", "10 Meadowview Road Basking Ridge, NJ", 2,true);
     myHome.moveIn("Ada Li");
-    myHome.nResidents(); 
+    myHome.moveIn("Hong Li");
+    myHome.moveIn("Jin Chen");
+    System.out.println(myHome.isResident("Ada Li"));
+    System.out.println(myHome.nResidents()); 
   }
 
 }
