@@ -40,7 +40,7 @@ ___**YES**__ 1 pt: The `Cafe` class uses the `restock(...)` method to avoid runn
 
 ## General Items:
 
-__**PART**___ 4 pts: Programs compile without errors or warnings
+__**YES**___ 4 pts: Programs compile without errors or warnings
 
 __**PART**___ 2 pts: Executes fully & consistently without crashing (exception/freeze)
 
