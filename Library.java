@@ -46,7 +46,7 @@ public class Library extends Building {
    */
   public String removeTitle(String title) {
     if (collection.contains(title)) {
-      collection.remove(title, true);
+      collection.remove(title, false);
       return title;
     } else {
       collection.remove(title, false);
@@ -127,8 +127,8 @@ public class Library extends Building {
     Library neilsonLibrary = new Library("Neilson Library", "7 Neilson Drive, Northampton, MA 01063", 4);
     neilsonLibrary.addTitle("The Art of War");
     neilsonLibrary.addTitle("Astronomy");
-    neilsonLibrary.isAvailable("Astronomy");
-    neilsonLibrary.checkOut("Astronomy");
+    // neilsonLibrary.isAvailable("Astronomy");
+    // neilsonLibrary.checkOut("Astronomy");
     neilsonLibrary.printCollection();
   }
 
