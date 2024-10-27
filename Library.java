@@ -46,7 +46,7 @@ public class Library extends Building {
    * @return title name
    */
   public String removeTitle(String title) {
-    if (collection.contains(title)) {
+    if (collection.containsKey(title)) {
       collection.remove(title, true);
       return title;
     } else {
@@ -77,7 +77,6 @@ public class Library extends Building {
    */
   public void returnBook(String title) {
     try {
-      addTitle(title);
       collection.replace(title, false, true);
       System.out.println(title + " is returned.");
     } catch (Exception e) {
@@ -132,6 +131,9 @@ public class Library extends Building {
     System.out.println(neilsonLibrary.toString());
     neilsonLibrary.addTitle("The Art of War");
     neilsonLibrary.addTitle("Astronomy");
+    neilsonLibrary.addTitle("Fifty Shades of Grey");
+    neilsonLibrary.printCollection();
+    neilsonLibrary.removeTitle("Fifty Shades of Grey");
     System.out.println(neilsonLibrary.isAvailable("Astronomy"));
     System.out.println(neilsonLibrary.containsTitle("Astronomy"));
     neilsonLibrary.checkOut("Astronomy");
