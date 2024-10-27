@@ -68,11 +68,13 @@ public class Cafe extends Building {
     }
 
     public static void main(String[] args) {
-        Cafe brewHaven = new Cafe("Brew Haven", "10 Meadwoview Road, Basking Ridge, New Jersey", 2, 100, 100, 20, 50);
+        Cafe brewHaven = new Cafe("Brew Haven", "30 Meadwoview Road, Basking Ridge, New Jersey", 2, 100, 100, 20, 50);
+        System.out.println(brewHaven);
         brewHaven.sellCoffee(12, 2, 3);
         brewHaven.sellCoffee(30, 2, 3);
         brewHaven.sellCoffee(40, 2, 3);
         brewHaven.sellCoffee(20, 2, 3);
+        brewHaven.sellCoffee(12, 2, 3);
 
     }
 
