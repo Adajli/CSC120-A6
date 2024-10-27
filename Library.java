@@ -90,11 +90,11 @@ public class Library extends Building {
    * Function to check if the title is in the library
    * 
    * @param title
-   * @return boolean containsFile
+   * @return boolean for containing the title in the library
    */
   public boolean containsTitle(String title) {
     boolean containsTitle = false;
-    if (collection.contains(title)) {
+    if (collection.containsKey(title)) {
       containsTitle = true;
     }
     return containsTitle;
@@ -133,6 +133,7 @@ public class Library extends Building {
     neilsonLibrary.addTitle("The Art of War");
     neilsonLibrary.addTitle("Astronomy");
     System.out.println(neilsonLibrary.isAvailable("Astronomy"));
+    System.out.println(neilsonLibrary.containsTitle("Astronomy"));
     neilsonLibrary.checkOut("Astronomy");
     neilsonLibrary.printCollection();
   }
