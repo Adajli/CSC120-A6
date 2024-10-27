@@ -93,6 +93,7 @@ public class House extends Building {
     myHome.moveIn("Jin Chen");
     myHome.moveIn("Arthur Li");
     System.out.println(myHome.isResident("Ada Li"));
+    myHome.moveOut("Ada Li");
     System.out.println(myHome.hasDiningRoom());
     System.out.println(myHome.nResidents());
   }
