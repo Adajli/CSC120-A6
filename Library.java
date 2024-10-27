@@ -131,9 +131,9 @@ public class Library extends Building {
     System.out.println(neilsonLibrary.toString());
     neilsonLibrary.addTitle("The Art of War");
     neilsonLibrary.addTitle("Astronomy");
-    neilsonLibrary.addTitle("Fifty Shades of Grey");
+    neilsonLibrary.addTitle("Flamer");
     neilsonLibrary.printCollection();
-    neilsonLibrary.removeTitle("Fifty Shades of Grey");
+    neilsonLibrary.removeTitle("Flamer");
     System.out.println(neilsonLibrary.isAvailable("Astronomy"));
     System.out.println(neilsonLibrary.containsTitle("Astronomy"));
     neilsonLibrary.checkOut("Astronomy");
