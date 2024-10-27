@@ -103,7 +103,7 @@ public class Library extends Building {
    * Function checks if the title is available
    * 
    * @param title
-   * @return boolean variable availalbe
+   * @return true if the title is currently available, false otherwise
    */
   public boolean isAvailable(String title) {
     boolean available = false;
@@ -116,15 +116,15 @@ public class Library extends Building {
     return available;
   }
 
-  // returns true if the title is currently available, false otherwise
   /**
-   * Function prints out collection
+   * Function prints out collection in an easy-to-read way (including checkout
+   * status)
    */
   public void printCollection() {
     System.out.println(collection.toString());
-  } // prints out the entire collection in an easy-to-read way (including checkout
-    // status)
-  /* Main function for testing */
+  }
+
+  // Main function for testing
 
   public static void main(String[] args) {
     Library neilsonLibrary = new Library("Neilson Library", "7 Neilson Drive, Northampton, MA 01063", 4);
