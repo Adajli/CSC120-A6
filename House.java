@@ -76,7 +76,7 @@ public class House extends Building {
    * Function to check if the person is the resident of house
    * 
    * @param person
-   * @return isResident
+   * @return true or false based on the person's residency
    */
   public boolean isResident(String person) {
     boolean isResident = false;
