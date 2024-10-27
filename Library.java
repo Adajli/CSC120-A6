@@ -1,5 +1,4 @@
 
-import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
@@ -32,6 +31,8 @@ public class Library extends Building {
    */
   public void addTitle(String title) {
     if (collection.contains(title)) {
+      System.out.println(collection);
+      System.out.println(title);
       throw new RuntimeException("Can't add that title");
     } else {
       collection.put(title, true);
@@ -46,10 +47,10 @@ public class Library extends Building {
    */
   public String removeTitle(String title) {
     if (collection.contains(title)) {
-      collection.remove(title, false);
+      collection.remove(title, true);
       return title;
     } else {
-      collection.remove(title, false);
+      collection.remove(title, true);
       throw new RuntimeException("Can't remove that title");
     }
   } // return the title that we removed
@@ -60,10 +61,11 @@ public class Library extends Building {
    * @param title
    */
   public void checkOut(String title) {
-    try {
-      removeTitle(title);
-      System.out.println(title + "is checked out.");
-    } catch (Exception e) {
+    if (isAvailable(title)) {
+      System.out.println(title + " is available.");
+      collection.replace(title, true, false);
+      System.out.println(title + " is checked out.");
+    } else {
       throw new RuntimeException("Can't check out " + title);
     }
   }
@@ -76,6 +78,7 @@ public class Library extends Building {
   public void returnBook(String title) {
     try {
       addTitle(title);
+      collection.replace(title, false, true);
       System.out.println(title + "is returned.");
     } catch (Exception e) {
       throw new RuntimeException("Can't return " + title);
@@ -104,12 +107,16 @@ public class Library extends Building {
    * @return boolean variable availalbe
    */
   public boolean isAvailable(String title) {
+    System.out.println(collection);
+    System.out.println(title);
     boolean available = false;
-    if (collection.contains(title)) {
+
+    if (collection.containsKey(title) && collection.get(title).equals(true)) {
       available = true;
     } else {
-      System.out.println("This title is not available");
+      System.out.println("Not available.");
     }
+
     return available;
   }
 
@@ -125,10 +132,11 @@ public class Library extends Building {
 
   public static void main(String[] args) {
     Library neilsonLibrary = new Library("Neilson Library", "7 Neilson Drive, Northampton, MA 01063", 4);
+    System.out.println(neilsonLibrary.toString());
     neilsonLibrary.addTitle("The Art of War");
     neilsonLibrary.addTitle("Astronomy");
-    // neilsonLibrary.isAvailable("Astronomy");
-    // neilsonLibrary.checkOut("Astronomy");
+    System.out.println(neilsonLibrary.isAvailable("Astronomy"));
+    neilsonLibrary.checkOut("Astronomy");
     neilsonLibrary.printCollection();
   }
 
