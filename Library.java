@@ -79,7 +79,7 @@ public class Library extends Building {
     try {
       addTitle(title);
       collection.replace(title, false, true);
-      System.out.println(title + "is returned.");
+      System.out.println(title + " is returned.");
     } catch (Exception e) {
       throw new RuntimeException("Can't return " + title);
     }
