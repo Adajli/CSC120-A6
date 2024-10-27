@@ -107,10 +107,7 @@ public class Library extends Building {
    * @return boolean variable availalbe
    */
   public boolean isAvailable(String title) {
-    System.out.println(collection);
-    System.out.println(title);
     boolean available = false;
-
     if (collection.containsKey(title) && collection.get(title).equals(true)) {
       available = true;
     } else {
