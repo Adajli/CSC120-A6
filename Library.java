@@ -50,7 +50,6 @@ public class Library extends Building {
       collection.remove(title, true);
       return title;
     } else {
-      collection.remove(title, true);
       throw new RuntimeException("Can't remove that title");
     }
   } // return the title that we removed
@@ -76,10 +75,10 @@ public class Library extends Building {
    * @param title
    */
   public void returnBook(String title) {
-    try {
+    if (collection.get(title).equals(false) && collection.containsKey(title)) {
       collection.replace(title, false, true);
       System.out.println(title + " is returned.");
-    } catch (Exception e) {
+    } else {
       throw new RuntimeException("Can't return " + title);
     }
 
@@ -92,11 +91,7 @@ public class Library extends Building {
    * @return boolean for containing the title in the library
    */
   public boolean containsTitle(String title) {
-    boolean containsTitle = false;
-    if (collection.containsKey(title)) {
-      containsTitle = true;
-    }
-    return containsTitle;
+    return collection.containsKey(title);
   }
 
   /**
@@ -106,14 +101,7 @@ public class Library extends Building {
    * @return true if the title is currently available, false otherwise
    */
   public boolean isAvailable(String title) {
-    boolean available = false;
-    if (collection.containsKey(title) && collection.get(title).equals(true)) {
-      available = true;
-    } else {
-      System.out.println("Not available.");
-    }
-
-    return available;
+    return collection.containsKey(title) && collection.get(title).equals(true);
   }
 
   /**
@@ -137,6 +125,7 @@ public class Library extends Building {
     System.out.println(neilsonLibrary.isAvailable("Astronomy"));
     System.out.println(neilsonLibrary.containsTitle("Astronomy"));
     neilsonLibrary.checkOut("Astronomy");
+    neilsonLibrary.returnBook("Astronomy");
     neilsonLibrary.printCollection();
   }
 
