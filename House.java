@@ -79,11 +79,7 @@ public class House extends Building {
    * @return true or false based on the person's residency
    */
   public boolean isResident(String person) {
-    boolean isResident = false;
-    if (residents.contains(person)) {
-      isResident = true;
-    }
-    return isResident;
+    return this.residents.contains(person);
   }
 
   public static void main(String[] args) {
