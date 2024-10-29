@@ -65,7 +65,7 @@ public class House extends Building {
    * @param name
    */
   public void moveOut(String name) {
-    if (residents.contains(name)) {
+    if (isResident(name)) {
       residents.remove(name);
     } else {
       throw new RuntimeException("Can't remove that person");
