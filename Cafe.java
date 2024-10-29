@@ -72,8 +72,10 @@ public class Cafe extends Building {
         System.out.println(brewHaven);
         brewHaven.sellCoffee(12, 2, 3);
         brewHaven.sellCoffee(30, 2, 3);
-        brewHaven.sellCoffee(40, 2, 3);
+        brewHaven.sellCoffee(10, 2, 3);
+        brewHaven.sellCoffee(10, 2, 3);
         brewHaven.sellCoffee(20, 2, 3);
+
     }
 
 }
