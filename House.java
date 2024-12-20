@@ -63,10 +63,12 @@ public class House extends Building {
    * Move out function
    * 
    * @param name
+   * @return person moved out
    */
-  public void moveOut(String name) {
+  public String moveOut(String name) {
     if (isResident(name)) {
       residents.remove(name);
+      return name + "moved out.";
     } else {
       throw new RuntimeException("Can't remove that person");
     }
